@@ -7,14 +7,14 @@ Built for the Cloud Computing Track challenge.
 
 ## 📡 Live Endpoint
 
-> **Replace with your actual deployed URL after deployment:**
+
 
 | Endpoint | URL |
 |---|---|
 | Health check | `https://routing-server-8yxk.onrender.com/healthz` |
 | Ready check | `https://routing-server-8yxk.onrender.com/ready` |
 | Stats | `https://routing-server-8yxk.onrender.com/stats` |
-| WebSocket | `wss://routing-server-8yxk.onrender.com` |
+| WebSocket | `https://routing-server-8yxk.onrender.com/ping` |
 
 ---
 
@@ -220,15 +220,7 @@ Connect to `wss://routing-server-8yxk.onrender.com
    - `SELF_URL` = `https://routing-server-8yxk.onrender.com`
 6. Deploy — the `render.yaml` in this repo automates most of this
 
-### Railway
 
-1. Push to GitHub → connect at [railway.app](https://railway.app)
-2. Or CLI: `railway login && railway init && railway up`
-3. Add environment variable:
-   - `SELF_URL` = `https://YOUR-APP-NAME.up.railway.app`
-4. The `railway.toml` handles build and health check config
-
----
 
 ## 🧪 Test
 
