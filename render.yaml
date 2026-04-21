@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: routing-server
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SELF_URL
+        value: https://YOUR-APP-NAME.onrender.com   # ← replace after first deploy
+    healthCheckPath: /healthz
+    autoDeploy: true

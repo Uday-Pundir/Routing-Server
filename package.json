@@ -1,0 +1,23 @@
+{
+  "name": "distributed-routing-server",
+  "version": "1.0.0",
+  "description": "Stateless P2P distributed routing server with blind mailbox relay",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "keywords": ["p2p", "routing", "websocket", "udp-hole-punching", "relay"],
+  "license": "MIT"
+}
