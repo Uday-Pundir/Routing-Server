@@ -150,7 +150,8 @@ Server → GET /ping → Server  (every 5 minutes)
 
 ### WebSocket Protocol
 
-Connect to `wss://YOUR-APP.onrender.com` (or `ws://localhost:3000` locally).
+Connect to `wss://routing-server-8yxk.onrender.com
+` (or `ws://localhost:3000` locally).
 
 #### Client → Server Messages
 
