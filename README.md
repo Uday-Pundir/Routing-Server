@@ -217,7 +217,7 @@ Connect to `wss://routing-server-8yxk.onrender.com
    - **Build Command:** `npm install`
    - **Start Command:** `npm start`
 5. Add environment variable:
-   - `SELF_URL` = `https://YOUR-APP-NAME.onrender.com`
+   - `SELF_URL` = `https://routing-server-8yxk.onrender.com`
 6. Deploy — the `render.yaml` in this repo automates most of this
 
 ### Railway
