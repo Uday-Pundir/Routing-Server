@@ -234,6 +234,9 @@ async function run() {
   } catch (e) {
     fail('Disconnect notification', e.message);
   }
+  // Wait 30 seconds before closing connections
+console.log('\n⏳ Waiting 30 seconds... check your stats page now!');
+await new Promise(resolve => setTimeout(resolve, 30000));
 
   // ── Summary ─────────────────────────────────────────
   peerA.ws.close();
