@@ -14,7 +14,7 @@ Built for the Cloud Computing Track challenge.
 | Health check | `https://routing-server-8yxk.onrender.com/healthz` |
 | Ready check | `https://routing-server-8yxk.onrender.com/ready` |
 | Stats | `https://routing-server-8yxk.onrender.com/stats` |
-| WebSocket | `https://routing-server-8yxk.onrender.com/ping` |
+| Keep-alive ping | `https://routing-server-8yxk.onrender.com/ping` |
 
 ---
 
