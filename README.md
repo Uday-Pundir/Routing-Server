@@ -48,7 +48,7 @@ Built for the Cloud Computing Track challenge.
 
 ### Key Design Decisions
 
-- **Single Node.js process** — Express for HTTP health endpoints + `ws` library for WebSocket on the same port
+- **Python-based async process** — aiohttp for HTTP endpoints + WebSocket on the same port
 - **Zero persistence** — the only state is a `Map<peerId, {ws, lastSeen, meta}>` in memory; process restart = clean slate
 - **CORS enabled** — browser-based clients can connect without proxy issues
 - **Protocol-agnostic payloads** — the `relay` and `signal` message types carry opaque JSON payloads, so clients decide their own data format
@@ -214,8 +214,8 @@ Connect to `wss://routing-server-8yxk.onrender.com` (or `ws://localhost:3000` lo
 2. Go to [Render Dashboard](https://dashboard.render.com) → **New Web Service**
 3. Connect your GitHub repo
 4. Settings:
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start`
+   - **Build Command:** `pip install -r requirements.txt`
+   - **Start Command:** `python server.py`
 5. Add environment variable:
    - `SELF_URL` = `https://routing-server-8yxk.onrender.com`
 6. Deploy — the `render.yaml` in this repo automates most of this
@@ -236,23 +236,23 @@ Connect to `wss://routing-server-8yxk.onrender.com` (or `ws://localhost:3000` lo
 ### Prerequisites
 
 ```bash
-npm install
+pip install websockets
 ```
 
 ### Run Locally
 
 ```bash
 # Terminal 1: Start the server
-npm start
+python server.py
 
 # Terminal 2: Run comprehensive tests
-node test-client.js ws://localhost:3000
+python test-client.py ws://localhost:3000
 ```
 
 ### Test Against Live Deployment
 
 ```bash
-node test-client.js wss://routing-server-8yxk.onrender.com
+python test-client.py wss://routing-server-8yxk.onrender.com
 ```
 
 ### What the Test Client Validates
@@ -317,12 +317,11 @@ node test-client.js wss://routing-server-8yxk.onrender.com
 
 ```
 routing-server/
-├── server.js          # Main server — Express + WebSocket
-├── test-client.js     # Comprehensive test suite (9 tests)
-├── package.json       # Dependencies: express, ws, uuid
+├── server.py          # Main server — aiohttp (HTTP + WebSocket)
+├── test-client.py     # Comprehensive test suite (9 tests, Python)
+├── requirements.txt   # Dependencies: aiohttp
 ├── render.yaml        # Render deployment blueprint
-├── railway.toml       # Railway deployment config
-├── .gitignore         # node_modules, .env, logs
+├── .gitignore         # __pycache__, .env, logs
 └── README.md          # This file
 ```
 

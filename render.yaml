@@ -1,12 +1,12 @@
 services:
   - type: web
     name: routing-server
-    env: node
-    buildCommand: npm install
-    startCommand: npm start
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
     envVars:
-      - key: NODE_ENV
-        value: production
+      - key: PYTHON_VERSION
+        value: 3.12
       - key: SELF_URL
         value: https://routing-server-8yxk.onrender.com
     healthCheckPath: /healthz
