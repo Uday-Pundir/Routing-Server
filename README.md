@@ -11,10 +11,10 @@ Built for the Cloud Computing Track challenge.
 
 | Endpoint | URL |
 |---|---|
-| Health check | `https://YOUR-APP.onrender.com/healthz` |
-| Ready check | `https://YOUR-APP.onrender.com/ready` |
-| Stats | `https://YOUR-APP.onrender.com/stats` |
-| WebSocket | `wss://YOUR-APP.onrender.com` |
+| Health check | `https://routing-server-8yxk.onrender.com/healthz` |
+| Ready check | `https://routing-server-8yxk.onrender.com/ready` |
+| Stats | `https://routing-server-8yxk.onrender.com/stats` |
+| WebSocket | `wss://routing-server-8yxk.onrender.com` |
 
 ---
 
@@ -150,7 +150,7 @@ Server → GET /ping → Server  (every 5 minutes)
 
 ### WebSocket Protocol
 
-Connect to `wss://YOUR-APP.onrender.com` (or `ws://localhost:3000` locally).
+Connect to `wss://routing-server-8yxk.onrender.com` (or `ws://localhost:3000` locally).
 
 #### Client → Server Messages
 
@@ -216,7 +216,7 @@ Connect to `wss://YOUR-APP.onrender.com` (or `ws://localhost:3000` locally).
    - **Build Command:** `npm install`
    - **Start Command:** `npm start`
 5. Add environment variable:
-   - `SELF_URL` = `https://YOUR-APP-NAME.onrender.com`
+   - `SELF_URL` = `https://routing-server-8yxk.onrender.com`
 6. Deploy — the `render.yaml` in this repo automates most of this
 
 ### Railway
@@ -224,7 +224,7 @@ Connect to `wss://YOUR-APP.onrender.com` (or `ws://localhost:3000` locally).
 1. Push to GitHub → connect at [railway.app](https://railway.app)
 2. Or CLI: `railway login && railway init && railway up`
 3. Add environment variable:
-   - `SELF_URL` = `https://YOUR-APP-NAME.up.railway.app`
+   - `SELF_URL` = `https://routing-server-8yxk.onrender.com`
 4. The `railway.toml` handles build and health check config
 
 ---
@@ -250,7 +250,7 @@ node test-client.js ws://localhost:3000
 ### Test Against Live Deployment
 
 ```bash
-node test-client.js wss://YOUR-APP.onrender.com
+node test-client.js wss://routing-server-8yxk.onrender.com
 ```
 
 ### What the Test Client Validates

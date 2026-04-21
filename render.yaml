@@ -8,6 +8,6 @@ services:
       - key: NODE_ENV
         value: production
       - key: SELF_URL
-        value: https://YOUR-APP-NAME.onrender.com   # ← replace after first deploy
+        value: https://routing-server-8yxk.onrender.com
     healthCheckPath: /healthz
     autoDeploy: true

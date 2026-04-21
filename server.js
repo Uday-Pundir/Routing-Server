@@ -192,6 +192,25 @@ wss.on('connection', (ws, req) => {
 // HTTP endpoints
 // ─────────────────────────────────────────────
 
+// Root — landing page
+app.get('/', (_req, res) => {
+  res.json({
+    name: 'Distributed Routing Server',
+    status: 'ok',
+    version: '1.0.0',
+    endpoints: {
+      healthz: '/healthz',
+      ready: '/ready',
+      stats: '/stats',
+      ping: '/ping',
+      websocket: 'wss://routing-server-8yxk.onrender.com',
+    },
+    peers: peers.size,
+    uptime: process.uptime(),
+    ts: Date.now(),
+  });
+});
+
 // Health check (matches the reference implementation pattern)
 app.get('/healthz', (_req, res) => {
   res.json({ status: 'ok', ts: Date.now(), peers: peers.size, uptime: process.uptime() });
