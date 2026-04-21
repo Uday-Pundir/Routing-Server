@@ -11,10 +11,10 @@ Built for the Cloud Computing Track challenge.
 
 | Endpoint | URL |
 |---|---|
-| Health check | `https://YOUR-APP.onrender.com/healthz` |
-| Ready check | `https://YOUR-APP.onrender.com/ready` |
-| Stats | `https://YOUR-APP.onrender.com/stats` |
-| WebSocket | `wss://YOUR-APP.onrender.com` |
+| Health check | `https://routing-server-8yxk.onrender.com/healthz` |
+| Ready check | `https://routing-server-8yxk.onrender.com/ready` |
+| Stats | `https://routing-server-8yxk.onrender.com/stats` |
+| WebSocket | `https://routing-server-8yxk.onrender.com/ping` |
 
 ---
 
