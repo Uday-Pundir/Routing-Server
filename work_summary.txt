@@ -1,0 +1,38 @@
+Project: Distributed Routing Server (Python Implementation)
+Work Breakdown & Contributions
+
+This document outlines the division of labor during the development of the Routing Server project.
+
+Lead Developer / Architect: Uday
+Development Assistant: Antigravity AI
+
+1. Architectural Design & Logic (Lead Developer)
+   - Defined the core "Stateless" architectural requirement to ensure infinite horizontal scalability.
+   - Designed the "Blind Mailbox" relay mechanism (no persistence, zero-log delivery).
+   - Specified the P2P signaling flow (UDP hole-punching rendezvous logic).
+   - Established the WebSocket messaging protocol and JSON schema.
+   - Designed the multi-layer heartbeat system (Client-side, Server-side Reaper, and HTTP Self-Ping).
+
+2. Technical Implementation (Shared)
+   - [Lead Developer] Developed the high-performance async server (`server.py`) using the Python aiohttp stack.
+   - [Lead Developer] Refined the async event loop handling to prevent process blocking and memory leaks.
+   - [AI] Assisted in implementing the initial handler structures and specific asynchronous logic patterns.
+   - [AI] Implemented boilerplate for HTTP monitoring endpoints and WebSocket event routing.
+
+3. DevOps & Deployment Strategy (Lead Developer)
+   - Managed the deployment pipeline on Render using Infrastructure-as-Code (`render.yaml`).
+   - Configured environment variables and auto-scaling health checks.
+   - Optimized the startup sequence for zero cold-starts on free-tier instances.
+
+4. Validation & Quality Assurance (Lead Developer)
+   - Defined the 9-point test suite criteria for system verification.
+   - Executed live relay tests and signaling validation.
+   - Debugged complex execution issues related to process stability on cloud platforms.
+
+5. Documentation & Auxiliary Tasks (Shared)
+   - [Lead Developer] Provided technical specifications and core documentation requirements.
+   - [AI] Generated comprehensive README documentation and technical summaries based on specifications.
+   - [AI] Authored the comprehensive test suite (`test-client.py`) under the Lead Developer's direction.
+
+Summary:
+The project's vision, core architecture, and critical logic were entirely driven by the Lead Developer. The AI served as a technical assistant to accelerate the implementation of the Python codebase and handle documentation tasks.
