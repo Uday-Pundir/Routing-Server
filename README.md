@@ -5,7 +5,7 @@ Built for the Cloud Computing Track challenge.
 
 ---
 
-## 📡 Live Endpoint
+##  Live Endpoint
 
 
 
@@ -19,7 +19,7 @@ Built for the Cloud Computing Track challenge.
 
 ---
 
-## 🏛️ Architecture
+##  Architecture
 
 ```
  ┌──────────┐                              ┌──────────┐
@@ -55,7 +55,7 @@ Built for the Cloud Computing Track challenge.
 
 ---
 
-## 🔀 How Routing Works
+##  How Routing Works
 
 The server acts as a **message relay** and **signalling rendezvous** — it never interprets or stores message content.
 
@@ -101,7 +101,7 @@ The server's role is purely **signalling rendezvous**. After clients exchange SD
 
 ---
 
-## 💓 How Heartbeat is Handled
+##  How Heartbeat is Handled
 
 Three independent layers ensure the server stays alive and peer state stays clean:
 
@@ -138,7 +138,7 @@ Server → GET /ping → Server  (every 5 minutes)
 
 ---
 
-## 🔧 API Reference
+##  API Reference
 
 ### HTTP Endpoints
 
@@ -206,7 +206,7 @@ Connect to `wss://routing-server-8yxk.onrender.com` (or `ws://localhost:3000` lo
 
 ---
 
-## 🚀 Deploy
+##  Deploy
 
 ### Render (Recommended)
 
@@ -231,7 +231,7 @@ Connect to `wss://routing-server-8yxk.onrender.com` (or `ws://localhost:3000` lo
 
 ---
 
-## 🧪 Test
+##  Test
 
 ### Prerequisites
 
@@ -270,30 +270,30 @@ python test-client.py wss://routing-server-8yxk.onrender.com
 ### Expected Output
 
 ```
-🔌 Connecting to ws://localhost:3000
+ Connecting to ws://localhost:3000
 
 ── TEST 1: Registration ──
-  ✅ PASS: Peer A registered
-  ✅ PASS: Peer B registered
+   PASS: Peer A registered
+   PASS: Peer B registered
 
 ── TEST 2: Heartbeat ping/pong ──
-  ✅ PASS: Heartbeat ping/pong
+   PASS: Heartbeat ping/pong
 
 ── TEST 3: Broadcast relay ──
-  ✅ PASS: Broadcast relay A → B
+   PASS: Broadcast relay A → B
 
 ── TEST 4: Targeted relay (A → B) ──
-  ✅ PASS: Targeted relay A → B
+   PASS: Targeted relay A → B
 
 ── TEST 5: Signal exchange (hole-punch) ──
-  ✅ PASS: Signal offer A → B
-  ✅ PASS: Signal answer B → A
+   PASS: Signal offer A → B
+   PASS: Signal answer B → A
 
 ── TEST 6: Peer list ──
-  ✅ PASS: Peer list (2 peers)
+   PASS: Peer list (2 peers)
 
 ── TEST 7: Disconnect notification ──
-  ✅ PASS: Peer B disconnect notified to A
+   PASS: Peer B disconnect notified to A
 
 ════════════════════════════════════
          TEST SUMMARY
@@ -313,7 +313,7 @@ python test-client.py wss://routing-server-8yxk.onrender.com
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 routing-server/
@@ -326,7 +326,3 @@ routing-server/
 ```
 
 ---
-
-## License
-
-MIT
