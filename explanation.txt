@@ -1,0 +1,59 @@
+BRIEF EXPLANATION
+
+1. ARCHITECTURE
+
+The system is a stateless peer-to-peer (P2P) routing server built using Python and aiohttp.
+
+- Clients connect using WebSocket (WSS)
+- The server maintains an in-memory map:
+  Map<peerId, {ws, lastSeen, meta}>
+- No database or disk storage is used
+- The server only acts as a relay and signalling point
+
+Workflow:
+Client A → Server → Client B (initial communication)
+After signalling → direct P2P connection (WebRTC over UDP)
+
+Key Features:
+- Stateless design
+- No message storage
+- Protocol-agnostic payloads
+- Supports WebRTC signalling (UDP hole punching)
+
+--------------------------------------------------
+
+2. HOW ROUTING WORKS
+
+The server acts as a "blind mailbox relay".
+
+Message flow:
+1. Client sends message (relay or signal)
+2. Server checks target peer in memory
+3. Server forwards message instantly
+4. Server deletes message (no storage)
+
+Types of routing:
+- Targeted Relay → message sent to specific peer
+- Broadcast Relay → message sent to all peers
+- Signal → used for WebRTC connection setup
+
+--------------------------------------------------
+
+3. HEARTBEAT & UPTIME
+
+To ensure 24/7 reliability and prevent cloud platform spin-downs:
+
+- Self-Heartbeat: The server pings its own /ping endpoint every 5 minutes.
+- Peer Reaper: A background task runs every 15 seconds to remove peers that haven't sent a ping in 30 seconds.
+- Client Pings: Clients are expected to send periodic "ping" messages to keep the connection alive.
+
+--------------------------------------------------
+
+4. ENDPOINTS
+
+- GET /: Server info & WebSocket URL
+- GET /healthz: Health check
+- GET /ready: Readiness check
+- GET /stats: Real-time peer count and uptime
+- GET /ping: Heartbeat target
+- WSS /: Main WebSocket entry point

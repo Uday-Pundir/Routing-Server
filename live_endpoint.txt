@@ -1,0 +1,10 @@
+Live Base URL: https://routing-server-8yxk.onrender.com
+
+Endpoints:
+- Main Info & WebSocket: https://routing-server-8yxk.onrender.com/
+- Health Check: https://routing-server-8yxk.onrender.com/healthz
+- Readiness: https://routing-server-8yxk.onrender.com/ready
+- Real-time Stats: https://routing-server-8yxk.onrender.com/stats
+- Heartbeat Ping: https://routing-server-8yxk.onrender.com/ping
+
+WebSocket URL: wss://routing-server-8yxk.onrender.com
